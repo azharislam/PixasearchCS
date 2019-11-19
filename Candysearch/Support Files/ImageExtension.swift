@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+
+//attempt to cache image
+//went with basic load instead
+
+//private var imageCache = NSCache<AnyObject, AnyObject>()
+
 extension UIImageView {
     func load(url: URL) {
         DispatchQueue.global().async { [weak self] in
@@ -21,5 +27,26 @@ extension UIImageView {
             }
         }
     }
+    
+//    func load(urlString: String) {
+//        guard let url = URL(string: urlString) else {return}
+//
+//        image = nil
+//
+//        URLSession.shared.dataTask(with: url, completionHandler: {
+//            (data, response, error) in
+//            if error != nil {
+//                print(error)
+//                return
+//            }
+//
+//            DispatchQueue.main.async {
+//                guard let imageData = data else {return}
+//                let imageToCache = UIImage(data: imageData)
+//                imageCache.setObject(imageToCache!, forKey: urlString)
+//                self.image = imageToCache
+//            }
+//            }).resume()
+//    }
 }
 

@@ -24,6 +24,7 @@ class GalleryViewController: UIViewController {
     @IBOutlet weak var galleryCV: UICollectionView!
     var searchString = String()
 
+
     private lazy var viewPresenter: GalleryViewPresenter = {
         return GalleryViewPresenter(controller: self)
     }()
@@ -131,6 +132,7 @@ extension GalleryViewController: NetworkRequestManager {
                    }
                    DispatchQueue.main.sync {
                        completionHandler()
+                    
                        self.galleryCV.reloadData()
                    }
 
