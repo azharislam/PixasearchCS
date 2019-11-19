@@ -11,10 +11,10 @@ import XCTest
 
 class PixabayNetworkTest: XCTestCase {
 
-    var pixabayAPI = PixabayAPI()
+    var api = PixabayAPI()
     
     override func setUp() {
-
+        api = PixabayAPI()
     }
 
     override func tearDown() {
@@ -22,25 +22,25 @@ class PixabayNetworkTest: XCTestCase {
     }
        func testKeyUrlComponents() {
            
-           let baseParams: [PixabayAPI.Keys: String] = [
-               .q :  "",
-               .editors_choice : "true",
-               .category: ""
+        let baseParams: [String : String] = [
+               "key" : "13197033-03eec42c293d2323112b4cca6",
+               "image_type" : "photo"
            ]
            
-           XCTAssertNoThrow(try PixaBayAPI.buildRequestURL(with: params))
+        XCTAssertNoThrow(api.pixabayURL(jsonKey: baseParams))
+        XCTAssertNoThrow(try api.pixabayURL(jsonKey: baseParams))
     
-           let request = try! PixaBayAPI.buildRequestURL(with: params)
+           let request = try! api.pixabayURL(jsonKey: baseParams)
            
            let components = URLComponents(url: request, resolvingAgainstBaseURL: true)
-           guard let key_item = components?.queryItems?.first(where: { item in
-               item.name == PixaBayAPI.Keys.key.rawValue
+           guard let keyItem = components?.queryItems?.first(where: { item in
+               item.name == "key"
            }) else {
                XCTFail()
                return
            }
            
-           XCTAssertEqual(key_item.value, "9186145-a30a2be1c35b6d8267cab481e")
+           XCTAssertEqual(keyItem.value, "13197033-03eec42c293d2323112b4cca6")
            
        }
 
