@@ -12,7 +12,6 @@ protocol GalleryView {
     func reloadData()
     func setNavTitle(_ title: String)
     func setNavigation()
-    func userSearch(term: String)
 }
 
 class GalleryViewController: UIViewController {
@@ -32,17 +31,8 @@ class GalleryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewPresenter = GalleryViewPresenter(controller: self)
         self.viewPresenter.configureGalleryView()
-        fetchImages(searchTerms: searchString, completionHandler: {  [weak self] in
-            guard let results = self?.imageCollection else {
-                           print("error")
-                           return
-                       }
-                       print("Number of images found: \(results.count)")
-                       }
-        )
-
+        self.userSearchImages()
     }
     
     override func viewWillLayoutSubviews() {
@@ -50,20 +40,31 @@ class GalleryViewController: UIViewController {
         setupFlowLayout()
     }
     
+    private func userSearchImages() {
+        request(searchTerms: searchString, completionHandler: {  [weak self] in
+            guard let results = self?.imageCollection else {
+                           print("error")
+                           return
+                       }
+                       print("Number of images found: \(results.count)")
+                       }
+        )
+    }
+    
     func setupFlowLayout() {
         if layout == nil {
             let numberItemsPerRow: CGFloat = 3
             let lineSpacing: CGFloat = 100
             let interItemSpacing: CGFloat = 5
-        
+
             let width = (galleryCV.frame.width - (numberItemsPerRow - 1) * (interItemSpacing) / numberItemsPerRow)
             let height = width
-        
+
         layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: width, height: height)
         layout.sectionInset = UIEdgeInsets.zero
         layout.scrollDirection = .horizontal
-        
+
         layout.minimumLineSpacing = lineSpacing
         layout.minimumInteritemSpacing = interItemSpacing
         galleryCV.setCollectionViewLayout(layout, animated: true)
@@ -74,39 +75,7 @@ class GalleryViewController: UIViewController {
         let config = URLSessionConfiguration.default
         return URLSession(configuration: config)
     }()
-
-    func fetchImages(searchTerms: String, completionHandler: @escaping () -> Void) {
-        let url = apiCaller.imageSearchURL(searchTerm: searchTerms)
-        let request = URLRequest(url: url)
-        let task = session.dataTask(with: request) {
-            (data, response, error) -> Void in
-
-            if let jsonData = data {
-                do {
-                    let decoder = JSONDecoder()
-                    self.images = try decoder.decode(Image.self, from: jsonData)
-                    if let imageHits = self.images?.hits {
-                        self.imageCollection = imageHits
-                    }
-                } catch let error {
-                    print("Error creating JSON object: \(error)")
-                }
-            } else if let requestError = error {
-                print("Error fetching images: \(requestError)")
-            } else {
-                print("Unexpected error with the request")
-            }
-            DispatchQueue.main.sync {
-                completionHandler()
-                self.galleryCV.reloadData()
-            }
-
-        }
-        task.resume()
-    }
 }
-
-
 
 extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -121,24 +90,11 @@ extension GalleryViewController: UICollectionViewDelegate, UICollectionViewDataS
             return UICollectionViewCell()
         }
         viewPresenter.configureGalleryCell(url: imageURL, cell: cell)
-        print("hello")
         return cell
     }
 }
 
 extension GalleryViewController: GalleryView {
-    func userSearch(term: String) {
-//        searchString = term
-//        self.fetchImages(searchTerms: term, completionHandler: {  [weak self] in
-//            guard let results = self?.imageCollection else {
-//                           print("error")
-//                           return
-//                       }
-//                       print("Number of images found: \(results.count)")
-//                       }
-//        )
-    }
-    
     func reloadData() {
         galleryCV.reloadData()
     }
@@ -150,6 +106,36 @@ extension GalleryViewController: GalleryView {
     func setNavigation() {
         navigationController?.navigationBar.isHidden = false
     }
-    
-    
+}
+
+extension GalleryViewController: NetworkRequestManager {
+    func request(searchTerms: String, completionHandler: @escaping () -> Void) {
+         let url = apiCaller.imageSearchURL(searchTerm: searchTerms)
+               let request = URLRequest(url: url)
+               let task = session.dataTask(with: request) {
+                   (data, response, error) -> Void in
+
+                   if let jsonData = data {
+                       do {
+                           let decoder = JSONDecoder()
+                           self.images = try decoder.decode(Image.self, from: jsonData)
+                           if let imageHits = self.images?.hits {
+                               self.imageCollection = imageHits
+                           }
+                       } catch let error {
+                           print("Error creating JSON object: \(error)")
+                       }
+                   } else if let requestError = error {
+                       print("Error fetching images: \(requestError)")
+                   } else {
+                       print("Unexpected error with the request")
+                   }
+                   DispatchQueue.main.sync {
+                       completionHandler()
+                       self.galleryCV.reloadData()
+                   }
+
+               }
+               task.resume()
+           }
 }

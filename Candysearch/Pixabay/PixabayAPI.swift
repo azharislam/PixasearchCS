@@ -8,6 +8,9 @@
 
 import Foundation
 
+protocol NetworkRequestManager: AnyObject {
+    func request(searchTerms: String, completionHandler: @escaping () -> Void)
+}
 
 class PixabayAPI {
     private var apiURL : String = "https://pixabay.com/api/"

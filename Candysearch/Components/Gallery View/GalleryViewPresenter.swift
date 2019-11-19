@@ -9,13 +9,16 @@
 import Foundation
 import UIKit
 
+enum StringHolder: String {
+    case title = "YOUR IMAGE SEARCH RESULTS"
+}
+
 protocol GalleryPresenterProtocol {
     var view: GalleryView? { get }
     func attachView(view: GalleryView)
     func viewDidLoad()
     func configureGalleryView()
     func configureGalleryCell(url: URL, cell: ImageCellProtocol)
-    
 }
 
 class GalleryViewPresenter {
@@ -29,6 +32,7 @@ class GalleryViewPresenter {
 }
 
 extension GalleryViewPresenter: GalleryPresenterProtocol {
+    
     func attachView(view: GalleryView) {
         self.view = view
     }
@@ -45,6 +49,7 @@ extension GalleryViewPresenter: GalleryPresenterProtocol {
     }
 
     func viewDidLoad() {
-        view?.setNavTitle("YOUR IMAGE SEARCH RESULTS")
+        let title = StringHolder.title.rawValue
+        view?.setNavTitle(title)
     }
 }
