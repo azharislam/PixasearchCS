@@ -17,5 +17,7 @@ class IdentifierExtension {
         case photoCell = "PhotoCell"
         case apiKey = "13197033-03eec42c293d2323112b4cca6"
         case apiURL = "https://pixabay.com/api/"
+        case search = "Search"
+        case logo = "candyspace.logo"
     }
 }

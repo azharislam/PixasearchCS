@@ -9,11 +9,6 @@
 import Foundation
 import UIKit
 
-enum Constants: String {
-    case search = "Search"
-    case logo = "candyspace.logo"
-}
-
 protocol SearchPresenterProtocol {
     var view: SearchView? { get }
     func attachView(view: SearchView)
@@ -37,11 +32,11 @@ extension SearchViewPresenter: SearchPresenterProtocol {
     }
     
     func set(buttonTitle: String) {
-        view?.setButtonTitle(Constants.search.rawValue)
+        view?.setButtonTitle(IdentifierExtension.Identifier.search.rawValue)
     }
     
     func set(imageView: UIImage) {
-        let imageName = Constants.logo.rawValue
+        let imageName = IdentifierExtension.Identifier.logo.rawValue
         if let logo = UIImage(named: imageName) {
             view?.setLogo(image: logo)
         }
