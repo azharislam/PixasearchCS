@@ -1,10 +1,12 @@
 //
-//  GalleryViewPresenterTest.swift
+//  CandySearchUnitTests.swift
 //  CandysearchTests
 //
 //  Created by Azhar Islam on 19/11/2019.
 //  Copyright © 2019 Azhar Islam. All rights reserved.
 //
+
+import XCTest
 
 import XCTest
 @testable import Candysearch
@@ -27,8 +29,7 @@ class GalleryViewPresenterTest: XCTestCase {
         XCTAssertEqual(view.title, "YOUR IMAGE SEARCH RESULTS")
     }
     
-    func test_didSetTitle() {
-        
+    func test_searchTerm() {
     }
 
 
@@ -52,21 +53,9 @@ private class GalleryViewMock: GalleryView {
 }
 
 private class GalleryViewCellMock: ImageCellProtocol {
+    var photo: UIImageView!
+    
     func set(image: URL?) {
-        
+        photo.load(url: image!)
     }
-    
-    
-    var images: Image?
-    let apiCaller = PixabayAPI()
-    var imageCollection = [Hits]()
-    var layout: UICollectionViewFlowLayout!
-    var searchString = String()
-    var title: String?
-    var viewController: UIViewController?
-    var isNavigation = false
-    
-    func reloadData() {}
-    func setNavTitle(_ title: String) {self.title = title}
-    func setNavigation() {self.isNavigation = true}
 }

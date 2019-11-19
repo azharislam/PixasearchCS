@@ -23,8 +23,9 @@
 		790589142382DE9300844680 /* SearchViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790589132382DE9300844680 /* SearchViewPresenter.swift */; };
 		79058916238314E900844680 /* IdentifierExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79058915238314E900844680 /* IdentifierExtension.swift */; };
 		79E3544A23848C040077DBCD /* CandysearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3544923848C040077DBCD /* CandysearchTests.swift */; };
-		79E3545223848E0B0077DBCD /* GalleryViewPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3545123848E0B0077DBCD /* GalleryViewPresenterTest.swift */; };
 		79E35454238494220077DBCD /* PixabayNetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E35453238494220077DBCD /* PixabayNetworkTest.swift */; };
+		79E354562384A74E0077DBCD /* PixabayNetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E354552384A74E0077DBCD /* PixabayNetworkTest.swift */; };
+		79E3545B2384A7FE0077DBCD /* CandySearchUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3545A2384A7FE0077DBCD /* CandySearchUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +59,9 @@
 		79E3544723848C040077DBCD /* CandysearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CandysearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E3544923848C040077DBCD /* CandysearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandysearchTests.swift; sourceTree = "<group>"; };
 		79E3544B23848C040077DBCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		79E3545123848E0B0077DBCD /* GalleryViewPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewPresenterTest.swift; sourceTree = "<group>"; };
 		79E35453238494220077DBCD /* PixabayNetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayNetworkTest.swift; sourceTree = "<group>"; };
+		79E354552384A74E0077DBCD /* PixabayNetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayNetworkTest.swift; sourceTree = "<group>"; };
+		79E3545A2384A7FE0077DBCD /* CandySearchUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandySearchUnitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +168,6 @@
 				790588EC2381E3A800844680 /* GalleryViewController.swift */,
 				790589062381EE7700844680 /* GalleryImageCollectionViewCell.swift */,
 				790589072381EE7700844680 /* GalleryImageCollectionViewCell.xib */,
-				79E3545123848E0B0077DBCD /* GalleryViewPresenterTest.swift */,
 			);
 			path = "Gallery View";
 			sourceTree = "<group>";
@@ -175,7 +176,9 @@
 			isa = PBXGroup;
 			children = (
 				79E3544923848C040077DBCD /* CandysearchTests.swift */,
+				79E354552384A74E0077DBCD /* PixabayNetworkTest.swift */,
 				79E3544B23848C040077DBCD /* Info.plist */,
+				79E3545A2384A7FE0077DBCD /* CandySearchUnitTests.swift */,
 			);
 			path = CandysearchTests;
 			sourceTree = "<group>";
@@ -300,9 +303,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79E3545223848E0B0077DBCD /* GalleryViewPresenterTest.swift in Sources */,
+				79E3545B2384A7FE0077DBCD /* CandySearchUnitTests.swift in Sources */,
 				79E35454238494220077DBCD /* PixabayNetworkTest.swift in Sources */,
 				79E3544A23848C040077DBCD /* CandysearchTests.swift in Sources */,
+				79E354562384A74E0077DBCD /* PixabayNetworkTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
