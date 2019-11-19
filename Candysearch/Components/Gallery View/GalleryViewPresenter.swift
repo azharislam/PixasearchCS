@@ -14,7 +14,7 @@ enum StringHolder: String {
 }
 
 protocol GalleryPresenterProtocol {
-    var view: GalleryView? { get }
+    var  view: GalleryView? { get }
     func attachView(view: GalleryView)
     func viewDidLoad()
     func configureGalleryView()

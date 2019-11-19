@@ -8,6 +8,13 @@
 
 import Foundation
 
+public enum Response: String {
+    case key = "key"
+    case q = "q"
+    case imageType = "image_type"
+    case photo = "photo"
+}
+
 protocol NetworkRequestManager: AnyObject {
     func request(searchTerms: String, completionHandler: @escaping () -> Void)
 }
@@ -19,9 +26,9 @@ class PixabayAPI {
     
     func imageSearchURL(searchTerm: String?) -> URL {
         guard let searchString = searchTerm else {
-            return pixabayURL(jsonKey: ["q" : ""])
+            return pixabayURL(jsonKey: [Response.q.rawValue : ""])
         }
-        let searchParam = ["q": searchString]
+        let searchParam = [Response.q.rawValue: searchString]
         return pixabayURL(jsonKey: searchParam)
     }
     
@@ -31,8 +38,8 @@ class PixabayAPI {
         var queryItems = [URLQueryItem]()
         
         let baseParams = [
-            "key": apiKey,
-            "image_type": "photo"
+            Response.key.rawValue: apiKey,
+            Response.imageType.rawValue: Response.photo.rawValue
             ]
         
         for (key, value) in baseParams {

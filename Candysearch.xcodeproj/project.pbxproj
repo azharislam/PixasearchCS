@@ -22,7 +22,20 @@
 		790589122382DE8A00844680 /* GalleryViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790589112382DE8A00844680 /* GalleryViewPresenter.swift */; };
 		790589142382DE9300844680 /* SearchViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790589132382DE9300844680 /* SearchViewPresenter.swift */; };
 		79058916238314E900844680 /* IdentifierExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79058915238314E900844680 /* IdentifierExtension.swift */; };
+		79E3544A23848C040077DBCD /* CandysearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3544923848C040077DBCD /* CandysearchTests.swift */; };
+		79E3545223848E0B0077DBCD /* GalleryViewPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E3545123848E0B0077DBCD /* GalleryViewPresenterTest.swift */; };
+		79E35454238494220077DBCD /* PixabayNetworkTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E35453238494220077DBCD /* PixabayNetworkTest.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		79E3544C23848C040077DBCD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 790588DD2381E3A800844680 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 790588E42381E3A800844680;
+			remoteInfo = Candysearch;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		790588E52381E3A800844680 /* Candysearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Candysearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,10 +55,22 @@
 		790589112382DE8A00844680 /* GalleryViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewPresenter.swift; sourceTree = "<group>"; };
 		790589132382DE9300844680 /* SearchViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewPresenter.swift; sourceTree = "<group>"; };
 		79058915238314E900844680 /* IdentifierExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifierExtension.swift; sourceTree = "<group>"; };
+		79E3544723848C040077DBCD /* CandysearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CandysearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79E3544923848C040077DBCD /* CandysearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandysearchTests.swift; sourceTree = "<group>"; };
+		79E3544B23848C040077DBCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79E3545123848E0B0077DBCD /* GalleryViewPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewPresenterTest.swift; sourceTree = "<group>"; };
+		79E35453238494220077DBCD /* PixabayNetworkTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayNetworkTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		790588E22381E3A800844680 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79E3544423848C040077DBCD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -59,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				790588E72381E3A800844680 /* Candysearch */,
+				79E3544823848C040077DBCD /* CandysearchTests */,
 				790588E62381E3A800844680 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				790588E52381E3A800844680 /* Candysearch.app */,
+				79E3544723848C040077DBCD /* CandysearchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +127,7 @@
 			children = (
 				790588FD2381E3E500844680 /* PixabayModel.swift */,
 				790588FF2381E3ED00844680 /* PixabayAPI.swift */,
+				79E35453238494220077DBCD /* PixabayNetworkTest.swift */,
 			);
 			path = Pixabay;
 			sourceTree = "<group>";
@@ -138,8 +166,18 @@
 				790588EC2381E3A800844680 /* GalleryViewController.swift */,
 				790589062381EE7700844680 /* GalleryImageCollectionViewCell.swift */,
 				790589072381EE7700844680 /* GalleryImageCollectionViewCell.xib */,
+				79E3545123848E0B0077DBCD /* GalleryViewPresenterTest.swift */,
 			);
 			path = "Gallery View";
+			sourceTree = "<group>";
+		};
+		79E3544823848C040077DBCD /* CandysearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				79E3544923848C040077DBCD /* CandysearchTests.swift */,
+				79E3544B23848C040077DBCD /* Info.plist */,
+			);
+			path = CandysearchTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +200,24 @@
 			productReference = 790588E52381E3A800844680 /* Candysearch.app */;
 			productType = "com.apple.product-type.application";
 		};
+		79E3544623848C040077DBCD /* CandysearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79E3544E23848C040077DBCD /* Build configuration list for PBXNativeTarget "CandysearchTests" */;
+			buildPhases = (
+				79E3544323848C040077DBCD /* Sources */,
+				79E3544423848C040077DBCD /* Frameworks */,
+				79E3544523848C040077DBCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79E3544D23848C040077DBCD /* PBXTargetDependency */,
+			);
+			name = CandysearchTests;
+			productName = CandysearchTests;
+			productReference = 79E3544723848C040077DBCD /* CandysearchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -174,6 +230,10 @@
 				TargetAttributes = {
 					790588E42381E3A800844680 = {
 						CreatedOnToolsVersion = 11.2.1;
+					};
+					79E3544623848C040077DBCD = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 790588E42381E3A800844680;
 					};
 				};
 			};
@@ -191,6 +251,7 @@
 			projectRoot = "";
 			targets = (
 				790588E42381E3A800844680 /* Candysearch */,
+				79E3544623848C040077DBCD /* CandysearchTests */,
 			);
 		};
 /* End PBXProject section */
@@ -204,6 +265,13 @@
 				790589092381EE7700844680 /* GalleryImageCollectionViewCell.xib in Resources */,
 				790588F22381E3AA00844680 /* Assets.xcassets in Resources */,
 				790588F02381E3A800844680 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79E3544523848C040077DBCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +296,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79E3544323848C040077DBCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79E3545223848E0B0077DBCD /* GalleryViewPresenterTest.swift in Sources */,
+				79E35454238494220077DBCD /* PixabayNetworkTest.swift in Sources */,
+				79E3544A23848C040077DBCD /* CandysearchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		79E3544D23848C040077DBCD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 790588E42381E3A800844680 /* Candysearch */;
+			targetProxy = 79E3544C23848C040077DBCD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		790588EE2381E3A800844680 /* Main.storyboard */ = {
@@ -400,6 +486,46 @@
 			};
 			name = Release;
 		};
+		79E3544F23848C040077DBCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63TQVKT6GS;
+				INFOPLIST_FILE = CandysearchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aislam.CandysearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Candysearch.app/Candysearch";
+			};
+			name = Debug;
+		};
+		79E3545023848C040077DBCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63TQVKT6GS;
+				INFOPLIST_FILE = CandysearchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = aislam.CandysearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Candysearch.app/Candysearch";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -417,6 +543,15 @@
 			buildConfigurations = (
 				790588FA2381E3AA00844680 /* Debug */,
 				790588FB2381E3AA00844680 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79E3544E23848C040077DBCD /* Build configuration list for PBXNativeTarget "CandysearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79E3544F23848C040077DBCD /* Debug */,
+				79E3545023848C040077DBCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
