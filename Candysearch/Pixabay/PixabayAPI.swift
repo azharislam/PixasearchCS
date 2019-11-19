@@ -13,8 +13,9 @@ protocol NetworkRequestManager: AnyObject {
 }
 
 class PixabayAPI {
-    private var apiURL : String = "https://pixabay.com/api/"
-    private var apiKey : String = "13197033-03eec42c293d2323112b4cca6"
+    
+    let apiURL = IdentifierExtension.Identifier.apiURL.rawValue
+    let apiKey = IdentifierExtension.Identifier.apiKey.rawValue
     
     func imageSearchURL(searchTerm: String?) -> URL {
         guard let searchString = searchTerm else {
@@ -26,9 +27,7 @@ class PixabayAPI {
     
     
     func pixabayURL(jsonKey: [String:String]?) -> URL {
-        
         var components = URLComponents(string: apiURL)
-
         var queryItems = [URLQueryItem]()
         
         let baseParams = [

@@ -19,7 +19,6 @@ class GalleryViewController: UIViewController {
     private var images: Image?
     private let apiCaller = PixabayAPI()
     private var imageCollection = [Hits]()
-    private var store = ImageStore()
     private var presenter: GalleryPresenterProtocol?
     private var layout: UICollectionViewFlowLayout!
     @IBOutlet weak var galleryCV: UICollectionView!

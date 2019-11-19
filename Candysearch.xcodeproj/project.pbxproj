@@ -15,7 +15,6 @@
 		790588F52381E3AA00844680 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 790588F32381E3AA00844680 /* LaunchScreen.storyboard */; };
 		790588FE2381E3E500844680 /* PixabayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790588FD2381E3E500844680 /* PixabayModel.swift */; };
 		790589002381E3ED00844680 /* PixabayAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790588FF2381E3ED00844680 /* PixabayAPI.swift */; };
-		790589022381E3F800844680 /* PixabayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790589012381E3F800844680 /* PixabayStore.swift */; };
 		790589052381EE0B00844680 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790589042381EE0B00844680 /* SearchViewController.swift */; };
 		790589082381EE7700844680 /* GalleryImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790589062381EE7700844680 /* GalleryImageCollectionViewCell.swift */; };
 		790589092381EE7700844680 /* GalleryImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 790589072381EE7700844680 /* GalleryImageCollectionViewCell.xib */; };
@@ -36,7 +35,6 @@
 		790588F62381E3AA00844680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		790588FD2381E3E500844680 /* PixabayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayModel.swift; sourceTree = "<group>"; };
 		790588FF2381E3ED00844680 /* PixabayAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayAPI.swift; sourceTree = "<group>"; };
-		790589012381E3F800844680 /* PixabayStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixabayStore.swift; sourceTree = "<group>"; };
 		790589042381EE0B00844680 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		790589062381EE7700844680 /* GalleryImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		790589072381EE7700844680 /* GalleryImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryImageCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 			children = (
 				790588FD2381E3E500844680 /* PixabayModel.swift */,
 				790588FF2381E3ED00844680 /* PixabayAPI.swift */,
-				790589012381E3F800844680 /* PixabayStore.swift */,
 			);
 			path = Pixabay;
 			sourceTree = "<group>";
@@ -217,7 +214,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				790589022381E3F800844680 /* PixabayStore.swift in Sources */,
 				790589142382DE9300844680 /* SearchViewPresenter.swift in Sources */,
 				790589082381EE7700844680 /* GalleryImageCollectionViewCell.swift in Sources */,
 				790589052381EE0B00844680 /* SearchViewController.swift in Sources */,
