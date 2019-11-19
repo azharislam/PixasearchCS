@@ -19,6 +19,8 @@ protocol NetworkRequestManager: AnyObject {
     func request(searchTerms: String, completionHandler: @escaping () -> Void)
 }
 
+//tried to parse response as [Response : String]
+
 class PixabayAPI {
     
     let apiURL = IdentifierExtension.Identifier.apiURL.rawValue
@@ -39,7 +41,7 @@ class PixabayAPI {
         
         let baseParams = [
             Response.key.rawValue: apiKey,
-            Response.imageType.rawValue: Response.photo.rawValue
+            Response.imageType.rawValue : Response.photo.rawValue
             ]
         
         for (key, value) in baseParams {

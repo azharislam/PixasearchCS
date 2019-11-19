@@ -11,7 +11,8 @@ import XCTest
 
 class PixabayNetworkTest: XCTestCase {
 
-    var api = PixabayAPI()
+    private var api = PixabayAPI()
+    private var networkManager: NetworkRequestManager!
     
     override func setUp() {
         api = PixabayAPI()
@@ -20,7 +21,8 @@ class PixabayNetworkTest: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
-       func testKeyUrlComponents() {
+    
+    func testKeyURLComponents() {
            
         let baseParams: [String : String] = [
                "key" : "13197033-03eec42c293d2323112b4cca6",
@@ -28,8 +30,7 @@ class PixabayNetworkTest: XCTestCase {
            ]
            
         XCTAssertNoThrow(api.pixabayURL(jsonKey: baseParams))
-        XCTAssertNoThrow(try api.pixabayURL(jsonKey: baseParams))
-    
+
            let request = try! api.pixabayURL(jsonKey: baseParams)
            
            let components = URLComponents(url: request, resolvingAgainstBaseURL: true)
@@ -41,7 +42,27 @@ class PixabayNetworkTest: XCTestCase {
            }
            
            XCTAssertEqual(keyItem.value, "13197033-03eec42c293d2323112b4cca6")
-           
-       }
-
+    }
+    
+    func testRequestSearchUrl() {
+    
+        let params: [String: String] = [
+            "q" :  "car"
+        ]
+        
+        XCTAssertNoThrow(api.pixabayURL(jsonKey: params))
+        
+        let request = try! api.pixabayURL(jsonKey: params)
+        
+        let components = URLComponents(url: request, resolvingAgainstBaseURL: true)
+        
+        guard let query = components?.queryItems?.first(where: { item in
+            item.name == "q"
+        }) else {
+            XCTFail()
+            return
+        }
+        XCTAssertEqual(query.value, "car")
+    }
+    
 }
